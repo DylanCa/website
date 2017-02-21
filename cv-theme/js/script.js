@@ -9,7 +9,7 @@ $(document).ready(function() {
         scrollPercent = (s / (d - c));
         var position = scrollPercent;
 
-        if ($('#skills').height() > 485){
+        if ($('#skills').height() > 485) {
             jQuery('.skillbar').each(function() {
                 jQuery(this).find('.skillbar-bar').animate({
                     width: jQuery(this).attr('data-percent')
@@ -17,7 +17,7 @@ $(document).ready(function() {
             });
         }
 
-        if ($('#skills').height() < 310){
+        if ($('#skills').height() < 310) {
             jQuery('.skillbar').each(function() {
                 jQuery(this).find('.skillbar-bar').stop();
                 jQuery(this).find('.skillbar-bar').width('0%')
@@ -35,7 +35,7 @@ $(document).ready(function() {
             $('#cvName').addClass("sticky");
             $('#hidd').addClass("sticky");
             $('progress').addClass("sticky");
-            
+
 
         } else {
             $('header').removeClass("sticky");
