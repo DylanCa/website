@@ -77,18 +77,7 @@ progress.sticky {
 
 body {
     background-color: white;
-    height: 2000px;
-}
-
-.cvDiv {
-    box-shadow: 0px 0px 15px 0px #656565;
-    margin-left: auto;
-    margin-right: auto;
-    width: 900px;
-}
-
-.bodyDiv {
-    position: relative;
+    height: 5000px;
 }
 
 #skills {
@@ -97,32 +86,18 @@ body {
 }
 
 #experience {
-    background: url('../img/coverold.jpg') center 0 no-repeat fixed;
+    background-image: url('../img/cover.jpg');
     z-index: 9;
 }
 
 #formation {
-    background: url('../img/cover.jpg') center 0 no-repeat fixed;
+    background-image: url('../img/u.png');
     z-index: 8;
 }
 
 #hobbies {
-    background: url('../img/coverold.jpg') center 0 no-repeat fixed;
+    background-image: url('../img/cover.jpg');
     z-index: 7;
-}
-
-#bwSkillXP {
-    position: relative;
-    height: 100px;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: yellow;
-    padding-top: 20px;
-    padding-left: 10px;
-    box-shadow: 0px 0px 15px 0px #656565;
-    top: 1000px;
-    z-index: 990;
 }
 
 #skills,
@@ -138,8 +113,38 @@ body {
     overflow: hidden;
 }
 
+.cvDiv {
+    box-shadow: 0px 0px 15px 0px #656565;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    top: 0;
+}
+
 .slide_inside {
     margin-top: 250px;
+}
+
+#bwSkillXP {
+    top: 1000px;
+}
+
+#bwXPForm {
+    top: 2000px;
+}
+
+#bwFormHobbies {
+    top: 3000px;
+}
+
+.bwDiv {
+    position: relative;
+    height: 100px;
+    width: 1000px;
+    background-color: yellow;
+    padding-top: 20px;
+    padding-left: 10px;
+    z-index: 990;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
