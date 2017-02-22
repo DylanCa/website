@@ -32,6 +32,13 @@
 </div>
 
 <body>
+    <div id="background">
+        <div id="moon" class="bgimg"></div>
+        <div id="sun" class="bgimg"></div>
+        <div id="backbg" class="bgimg decor"></div>
+        <div id="frontbg" class="bgimg decor"></div>
+        <div id="house" class="bgimg decor"></div>
+    </div>
     <div id="skills" class="cvDiv">
         <div class="slide_inside">
             <h1>Skills</h1>

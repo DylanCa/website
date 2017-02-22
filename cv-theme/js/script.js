@@ -28,6 +28,15 @@ $(document).ready(function() {
 
         if ($(this).scrollTop() > 0) {
 
+
+
+            $('#sun').css({ 'top': $(this).scrollTop() * -0.0819 - 160 });
+            $('#moon').css({ 'top': $(this).scrollTop() * 0.0819 - 500 });
+            $('#backbg').css({ 'top': $(this).scrollTop() * 0.01428 + 300 });
+
+            $('.name').html($(this).scrollTop() * 0.01428 + 300);
+
+
             setHeight();
 
             $('header').addClass("sticky");
