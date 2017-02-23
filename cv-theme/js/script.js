@@ -6,6 +6,7 @@ $(document).ready(function() {
     setZone();
     bubbleClick();
     hoverBar();
+    workClick();
 
     $(window).scroll(function() {
         var s = $(window).scrollTop(),
@@ -74,28 +75,34 @@ function setHeight() {
 
 function moveZone() {
     $('#skills').css({ 'top': $(this).scrollTop() * 0.02 });
+
+    $('#experience').css({ 'top': $(this).scrollTop() * 0.02 - 50});
+
+    $('#formation').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
+
+    $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 50});
 }
 
 function setZone() {
     $('#buttonSkills').click(function() {
         $("html, body").animate({
             scrollTop: "5px"
-        })
+        }, 400)
     });
     $('#buttonExperience').click(function() {
         $("html, body").animate({
             scrollTop: "1000px"
-        })
+        }, 400)
     });
     $('#buttonFormation').click(function() {
         $("html, body").animate({
             scrollTop: "2140px"
-        })
+        }, 400)
     });
     $('#buttonContact').click(function() {
         $("html, body").animate({
             scrollTop: "3280px"
-        })
+        }, 400)
     });
 
     $('#pic').click(function() {
@@ -138,7 +145,13 @@ function skillbar() {
 }
 
 function bubbleClick() {
+
+
+
     $('.bubble').click(function() {
+
+        $(".workName").hide();
+
         if ($(this).css("marginLeft") == '-24px') {
             $('.bubble').animate({
                 'marginLeft': '-24'
@@ -148,10 +161,31 @@ function bubbleClick() {
             }, 100);
 
             switch ($(this).find("h1").html()) {
-                case '2017':
-                    $('#name').html('t');
-                    break;
 
+                case '2017':
+                    $("div#workName7").show();
+                    $("#timelineSelected").show();
+                    break;
+                case '2016':
+                    $("div#workName6").show();
+                    $("#timelineSelected").show();
+                    break;
+                case '2015':
+                    $("div#workName5").show();
+                    $("#timelineSelected").show();
+                    break;
+                case '2014':
+                    $("div#workName4").show();
+                    $("#timelineSelected").show();
+                    break;
+                case '2013':
+                    $("div#workName3").show();
+                    $("#timelineSelected").show();
+                    break;
+                case '2012':
+                    $("div#workName2").show();
+                    $("#timelineSelected").show();
+                    break;
                 default:
                     break;
             }
@@ -159,6 +193,7 @@ function bubbleClick() {
             $('.bubble').animate({
                 'marginLeft': '-24'
             }, 100);
+            $("#timelineSelected").hide();
         }
     });
 }
@@ -213,4 +248,32 @@ function hoverBar() {
                 break;
         }
     }, function() { $("#skillHovered").html('<p>Hover a skill to see details.</p>'); });
+}
+
+function workClick() {
+    $('.workName').click(function() {
+        switch ($(this).html()) {
+            case "TFC":
+                $("#workselected").load("/cv-theme/templates/timeline.html #tfc ").html();
+                break;
+            case "Pizza":
+                $("#workselected").load("/cv-theme/templates/timeline.html #pizza ").html();
+                break;
+            case 'Gas Station "Relais des Cedres"':
+                $("#workselected").load("/cv-theme/templates/timeline.html #station ").html();
+                break;
+            case "McDonald's":
+                $("#workselected").load("/cv-theme/templates/timeline.html #mcdo ").html();
+                break;
+            case "Quick":
+                $("#workselected").load("/cv-theme/templates/timeline.html #quick ").html();
+                break;
+            case "Chronodrive":
+                $("#workselected").load("/cv-theme/templates/timeline.html #chrono ").html();
+                break;
+
+            default:
+                break;
+        }
+    });
 }
