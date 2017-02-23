@@ -5,6 +5,7 @@ $(document).ready(function() {
     setHeight();
     setZone();
     bubbleClick();
+    hoverBar();
 
     $(window).scroll(function() {
         var s = $(window).scrollTop(),
@@ -21,19 +22,17 @@ $(document).ready(function() {
             setHeight();
 
             $('progress').attr('value', position);
+
             $('header').addClass("sticky");
             $('#pic').addClass("sticky");
-            $('#cvName').addClass("sticky");
-            $('#hidd').addClass("sticky");
             $('progress').addClass("sticky");
             $('#enveloppe').addClass("sticky");
 
         } else {
             $('header').removeClass("sticky");
             $('#pic').removeClass("sticky");
-            $('#cvName').removeClass("sticky");
-            $('#hidd').removeClass("sticky");
             $('progress').removeClass("sticky");
+            $('#enveloppe').removeClass("sticky");
         }
     });
 });
@@ -74,7 +73,7 @@ function setHeight() {
 }
 
 function moveZone() {
-    $('#skills').css({ 'top': $(this).scrollTop() * 0.03 });
+    $('#skills').css({ 'top': $(this).scrollTop() * 0.02 });
 }
 
 function setZone() {
@@ -99,11 +98,25 @@ function setZone() {
         })
     });
 
+    $('#pic').click(function() {
+        if ($(window).scrollTop() == 0) {
+            $("html, body").animate({
+                scrollTop: "5px"
+            })
+
+        } else {
+            $("html, body").animate({
+                scrollTop: "0px"
+            })
+        }
+    });
+
+
 }
 
 function moveBackground() {
-    $('#sun').css({ 'top': $(this).scrollTop() * -0.1319 });
-    $('#moon').css({ 'top': $(this).scrollTop() * 0.0819 - 550 });
+    $('#sun').css({ 'top': $(this).scrollTop() * -0.219 + 100 });
+    $('#moon').css({ 'top': $(this).scrollTop() * 0.179 - 550 });
     $('#backbg').css({ 'top': $(this).scrollTop() * -0.01728 + 300 });
     $('#frontbg').css({ 'top': $(this).scrollTop() * -0.012 + 200 });
     $('#house').css({ 'top': $(this).scrollTop() * -0.008 + 150 });
@@ -124,19 +137,80 @@ function skillbar() {
     }
 }
 
-function bubbleClick(){
+function bubbleClick() {
     $('.bubble').click(function() {
-        if ($(this).css("marginLeft") == '-20px') {
+        if ($(this).css("marginLeft") == '-24px') {
             $('.bubble').animate({
-                'marginLeft': '-20'
+                'marginLeft': '-24'
             }, 100);
             $(this).animate({
                 'marginLeft': '0'
             }, 100);
+
+            switch ($(this).find("h1").html()) {
+                case '2017':
+                    $('#name').html('t');
+                    break;
+
+                default:
+                    break;
+            }
         } else if ($(this).css("marginLeft") == '0px') {
             $('.bubble').animate({
-                'marginLeft': '-20'
+                'marginLeft': '-24'
             }, 100);
         }
     });
+}
+
+function hoverBar() {
+    $('.skillbar').hover(function() {
+        switch ($(this).find("span").html()) {
+            case 'Java':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Java").html();
+                break;
+            case 'C#':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #CS").html();
+                break;
+            case 'HTML':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #HTML").html();
+                break;
+            case 'PHP':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #PHP").html();
+                break;
+            case 'CSS':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #CSS").html();
+                break;
+            case 'JavaScript / JQuery':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #JS").html();
+                break;
+            case 'SQL':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #SQL").html();
+                break;
+            case 'Leadership':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Leadership").html();
+                break;
+            case 'Interpersonal Skills':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #IS").html();
+                break;
+            case 'Initiative':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Initiative").html();
+                break;
+            case 'Optimism':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Optimism").html();
+                break;
+            case 'Adaptability':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Adaptability").html();
+                break;
+            case 'Critical Thinking':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #CT").html();
+                break;
+            case 'Reliability':
+                $("#skillHovered").load("/cv-theme/templates/timeline.html #Reliability").html();
+                break;
+            default:
+                $("#skillHovered").html('<p>Hover a skill to see details.</p>');
+                break;
+        }
+    }, function() { $("#skillHovered").html('<p>Hover a skill to see details.</p>'); });
 }

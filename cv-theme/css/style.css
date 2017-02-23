@@ -1,10 +1,15 @@
+html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 header {
     position: relative;
     z-index: 1000;
     display: block;
     position: fixed;
-    margin-left: -8px;
-    margin-top: -8px;
     width: 100%;
     height: 200px;
     background-color: #ecf0f1;
@@ -19,11 +24,11 @@ header.sticky {
 }
 
 #pic {
-    position: fixed;
+    position: relative;
     border: 5px solid white;
     border-width: 5px;
-    margin-left: 43%;
     margin-top: 100px;
+    margin-left: 45%;
     border-radius: 50%;
     height: 160px;
     width: auto;
@@ -44,10 +49,6 @@ header.sticky {
     width: 100%;
 }
 
-#cvName.sticky {
-    margin-left: -120px;
-}
-
 #namediv {
     text-align: center;
     background: #ecf0f1;
@@ -66,7 +67,6 @@ header.sticky {
 }
 
 progress {
-    margin-left: -8px;
     position: fixed;
     z-index: 999;
     background: transparent;
@@ -88,9 +88,8 @@ progress.sticky {
     transition: all 3s ease;
     width: 100%;
     height: 100%;
-    margin-left: -8px;
     position: fixed;
-    z-index: -998;
+    z-index: 998;
 }
 
 #enveloppe.sticky {
@@ -101,13 +100,15 @@ body {
     background: -webkit-linear-gradient(#2B3045, #F7FA9D);
     background: linear-gradient(#2B3045, #F7FA9D);
     background-size: 100% 110%;
+    width: 100%;
     height: 4000px;
+    margin: 0 auto;
     position: relative;
 }
 
 #sidebar {
     position: fixed;
-    z-index: 10000;
+    z-index: 800;
     right: 0;
     top: 350px;
     border-radius: 7px 0px 0px 7px;
@@ -139,20 +140,19 @@ body {
     height: 100%;
 }
 
-.decor {
-    left: 0px;
-}
-
 #frontbg {
     background-image: url('../img/front-bg.png');
+    background-size: 100%;
 }
 
 #backbg {
     background-image: url('../img/back-bg.png');
+    background-size: 100%;
 }
 
 #house {
     background-image: url('../img/house.png');
+    background-size: 100%;
 }
 
 #moon {
@@ -169,12 +169,13 @@ body {
     box-shadow: 0px 0px 5px 0px #656565;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 80px;
     width: 900px;
-    top: 0;
+    top: -20px;
 }
 
 #skillsSlide {
-    padding-top: 90px;
+    margin-top: 220px;
 }
 
 #skills {
@@ -183,12 +184,21 @@ body {
     text-align: center;
 }
 
-#devLangSkills {
+#skillHovered {
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px hidden;
+    box-shadow: inset 0px 0px 5px 0px #656565;
+    border-radius: 5px;
+    height: 250px;
+}
+
+#proSkills {
     display: inline-block;
     margin-right: 90px;
 }
 
-#langKnown {
+#persoSkills {
     display: inline-block;
 }
 
@@ -198,7 +208,7 @@ body {
 }
 
 #formation {
-    background-image: url('../img/u.png');
+    background: white;
     z-index: 8;
 }
 
@@ -218,10 +228,6 @@ body {
     right: 0;
     position: fixed;
     overflow: hidden;
-}
-
-#Contact {
-    height: 800px;
 }
 
 .slide_inside {
@@ -245,16 +251,22 @@ body {
 }
 
 #footer {
-    top: 4000px;
+    top: 3650px;
+    width: 100%;
+    height: 50px;
+}
+
+.end {
+    font: bold 20px arial, sans-serif;
 }
 
 .bwDiv {
     position: relative;
     height: 120px;
-    width: 1000px;
+    width: 1150px;
     background-color: #ecf0f1;
     padding-top: 20px;
-    padding-left: 10px;
+    margin: 0 auto;
     box-shadow: 0px 0px 5px 3px #656565;
     border-radius: 5px;
     z-index: 990;
@@ -325,67 +337,57 @@ body {
     background: #FFB400;
 }
 
-
-/*#footerText {
-    position: relative;
-    background-color: yellow;
-    z-index: 10;
-    left: -8px;
-    text-align: center;
+.truc {
+    background-color: black
 }
-
-#footer {
-    width: 100%;
-    height: 18px;
-    bottom: 1px;
-    position: fixed;
-}*/
 
 #timelineLine {
     height: 1000px;
     width: 10px;
-    background-color: black;
+    background-color: #ecf0f1;
+    box-shadow: inset 0px 0px 2px 1px;
     margin-left: 50px;
     position: absolute;
-    margin-top: 100px
 }
 
 .bubble {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    width: 55px;
+    height: 55px;
+    background-color: #ecf0f1;
+    box-shadow: inset 0px 0px 2px 1px;
     border-radius: 50%;
-    margin-left: -20px;
+    margin-left: -24px;
     position: absolute;
 }
 
 .bubbleh {
-    font: bold 20px arial, sans-serif;
+    font: bold 22px arial, sans-serif;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    background-color: #565656;
+    background-clip: text;
     text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 #bubble7 {
-    top: 200px;
+    top: 250px;
 }
 
 #bubble6 {
-    top: 310px;
+    top: 350px;
 }
 
 #bubble5 {
-    top: 420px;
+    top: 450px;
 }
 
 #bubble4 {
-    top: 530px;
+    top: 550px;
 }
 
 #bubble3 {
-    top: 640px;
+    top: 650px;
 }
 
 #bubble2 {
