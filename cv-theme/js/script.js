@@ -6,6 +6,7 @@ $(document).ready(function() {
     setZone();
     bubbleClick();
     hoverBar();
+    moveZone();
     workClick();
     studyClick();
 
@@ -81,7 +82,7 @@ function moveZone() {
 
     $('#formation').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
 
-    $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
+    $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 80 });
 }
 
 function setZone() {
@@ -123,11 +124,11 @@ function setZone() {
 }
 
 function moveBackground() {
-    $('#sun').css({ 'top': $(this).scrollTop() * -0.219 + 100 });
-    $('#moon').css({ 'top': $(this).scrollTop() * 0.179 - 550 });
-    $('#backbg').css({ 'top': $(this).scrollTop() * -0.01728 + 300 });
-    $('#frontbg').css({ 'top': $(this).scrollTop() * -0.012 + 200 });
-    $('#house').css({ 'top': $(this).scrollTop() * -0.008 + 150 });
+    // $('#sun').css({ 'top': $(this).scrollTop() * -0.219 + 100 });
+    // $('#moon').css({ 'top': $(this).scrollTop() * 0.179 - 550 });
+    $('#fractal1').css({ 'top': $(this).scrollTop() * -0.5 });
+    $('#fractal2').css({ 'top': $(this).scrollTop() * -0.3 });
+    $('#fractal3').css({ 'top': $(this).scrollTop() * -0.1 });
 }
 
 function skillbar() {
@@ -201,74 +202,53 @@ function bubbleClick() {
 
 
 
-    $('.bubble, .bubbleInt').click(function() {
+    $('.bubble, .bubbleInt, #arenesS, #mirailS, #exiaS').click(function() {
 
         $(".workName").hide();
         $('#workSelected').hide();
 
-        if ($(this).css("marginLeft") == '-22px' || $(this).css("marginLeft") == '-30px') {
-            $('.bubble').animate({
-                'marginLeft': '-22'
-            }, 100);
-            $('.bubbleInt').animate({
-                'marginLeft': '-30'
-            }, 100);
+        $('.bubble, .bubbleInt, #arenesS, #mirailS, #exiaS').css("box-shadow", "");
+        $(this).css("box-shadow", "inset 1px 1px 1px 1px #878787");
 
-            if ($(this).attr('class') == 'bubbleInt') {
 
-                $(this).animate({
-                    'marginLeft': '-60'
-                }, 100);
-            } else {
-                $(this).animate({
-                    'marginLeft': '0'
-                }, 100);
-            }
+        $("#timelineSelected").show();
+        $('.workName').css({
+            'color': '',
+            'box-shadow': '0px 0px 5px 0px #878787'
+        });
 
-            $("#timelineSelected").show();
+        switch ($(this).find("h1").html()) {
 
-            switch ($(this).find("h1").html()) {
-
-                case '2017':
-                    $("h1#workName7").show();
-                    break;
-                case '2016':
-                    $("h1#workName6").show();
-                    break;
-                case '2015':
-                    $("h1#workName5").show();
-                    break;
-                case '2014':
-                    $("h1#workName4").show();
-                    break;
-                case '2013':
-                    $("h1#workName3").show();
-                    break;
-                case '2012':
-                    $("h1#workName2").show();
-                    break;
-                case 'CNRS':
-                    $("#timelineSelected").hide();
-                    $('#workSelected').show();
-                    $("#workSelected").load("/cv-theme/templates/timeline.html #cnrs ").html();
-                    $("#workSelected").css({
-                        'float': 'right',
-                        'left': '-150px'
-                    });
-                default:
-                    break;
-            }
-        } else if ($(this).css("marginLeft") == '0px' || $(this).css("marginLeft") == '-60px') {
-            $('.bubble').animate({
-                'marginLeft': '-22'
-            }, 100);
-
-            $('.bubbleInt').animate({
-                'marginLeft': '-30'
-            }, 100);
-
-            $("#timelineSelected").hide();
+            case '2017':
+                $("h1#workName7").show();
+                break;
+            case '2016':
+                $("h1#workName6").show();
+                break;
+            case '2015':
+                $("h1#workName5").show();
+                break;
+            case '2014':
+                $("h1#workName4").show();
+                break;
+            case '2013':
+                $("h1#workName3").show();
+                break;
+            case '2012':
+                $("h1#workName2").show();
+                break;
+            case 'CNRS':
+                $("#timelineSelected").hide();
+                $('#workSelected').show();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #cnrs ").html();
+                $("#workSelected").css({
+                    'float': 'right',
+                    'left': '-100px'
+                });
+            default:
+                break;
         }
+
     });
 }
 
@@ -282,6 +262,16 @@ function workClick() {
         $('#workSelected').empty();
         $('#workSelected').show();
 
+        $('.workName').css({
+            'color': '',
+            'box-shadow': '0px 0px 5px 0px #878787'
+        });
+
+        $(this).css({
+            'color': '#E7A036',
+            'box-shadow': 'inset 1px 1px 1px 1px #878787'
+        });
+
         switch ($(this).html()) {
             case "TFC":
                 $("#workSelected").load("/cv-theme/templates/timeline.html #tfc ").html();
@@ -289,7 +279,7 @@ function workClick() {
             case "Pizza Bonici":
                 $("#workSelected").load("/cv-theme/templates/timeline.html #pizza ").html();
                 break;
-            case 'Gas Station "Relais des Cedres"':
+            case 'Relais des Cedres':
                 $("#workSelected").load("/cv-theme/templates/timeline.html #station ").html();
                 break;
             case "McDonald's":
@@ -310,22 +300,27 @@ function workClick() {
 
 function studyClick() {
     $('.study').click(function() {
+        $('.study').css('color', '');
+        $(this).css('color', '#155A15');
         switch ($(this).html()) {
             case "Exia.CESi":
                 $('#schoolName').load("/cv-theme/templates/timeline.html #exia .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #exia .schoolLoc").html();
+                $('#schoolLink').load("/cv-theme/templates/timeline.html #exia .schoolLink").html();
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #exia .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #exia .schoolDesc").html();
                 break;
-                case "Lycée des Arènes":
+            case "Lycée des Arènes":
                 $('#schoolName').load("/cv-theme/templates/timeline.html #arenes .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #arenes .schoolLoc").html();
+                $('#schoolLink').load("/cv-theme/templates/timeline.html #arenes .schoolLink").html();
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #arenes .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #arenes .schoolDesc").html();
                 break;
-                case "Université Toulouse II - Jean Jaurès":
+            case "Université Toulouse II - Jean Jaurès":
                 $('#schoolName').load("/cv-theme/templates/timeline.html #mirail .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #mirail .schoolLoc").html();
+                $('#schoolLink').load("/cv-theme/templates/timeline.html #mirail .schoolLink").html();
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #mirail .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #mirail .schoolDesc").html();
                 break;

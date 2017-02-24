@@ -12,8 +12,8 @@
     <div id="cvName">
         <div id="namediv">
             <h1 id="name" class="insetText">
-            Dylan Cattelan
-        </h1></div>
+            Dylan Cattelan</h1>
+        </div>
     </div>
     <img alt="Dylan Cattelan" id="pic" src="cv-theme/img/face.jpg" />
 </header>
@@ -29,7 +29,7 @@
             <div class="buttonText">Skills</div>
         </button>
         <button id="buttonExperience" class="buttons">
-            <div class="buttonText">Work Experience</div>
+            <div class="buttonText">Work & Internships</div>
         </button>
         <button id="buttonFormation" class="buttons">
             <div class="buttonText">Education</div>
@@ -39,11 +39,9 @@
         </button>
     </div>
     <div id="background">
-        <div id="moon" class="bgimg"></div>
-        <div id="sun" class="bgimg"></div>
-        <div id="backbg" class="bgimg decor"></div>
-        <div id="frontbg" class="bgimg decor"></div>
-        <div id="house" class="bgimg decor"></div>
+        <div id="fractal3" class="bgimg decor"><img src="cv-theme/img/star3.png" /></div>
+        <div id="fractal2" class="bgimg decor"><img src="cv-theme/img/star2.png" /></div>
+        <div id="fractal1" class="bgimg decor"><img src="cv-theme/img/star1.png" /></div>
     </div>
     <div id="bwHeadSkills" class="bwDiv cvDiv">
         <h1 class="insetText bw">Skills</h1>
@@ -51,38 +49,42 @@
     <div id="skills" class="cvDiv">
         <div id="skillsSlide" class="slide_inside">
             <div id="proSkills">
-                <h1>Pro Skills</h1>
+                <div id="proDiv" class="skillDiv">
+                    <h1 id="proH1" class="skillH1 insetText">Pro Skills</h1>
+                </div>
                 <div class="skillbar" data-percent="95%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>Java</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>Java</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="92%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>C#</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>C#</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="87%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>HTML</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>HTML</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="82%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>PHP</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>PHP</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="80%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>CSS</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>CSS</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="87%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>JavaScript / JQuery</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>JavaScript / JQuery</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
                 <div class="skillbar" data-percent="79%">
-                    <div class="skillbar-title" style="background: #00a8ff;"><span>SQL</span></div>
-                    <div class="skillbar-bar" style="background: #00a8ff;"></div>
+                    <div class="skillbar-title" style=""><span>SQL</span></div>
+                    <div class="skillbar-bar"></div>
                 </div>
             </div>
             <div id="persoSkills">
-                <h1>Personal Skills</h1>
+                <div id="persoDiv" class="skillDiv">
+                    <h1 id="persoH1" class="skillH1 insetText">&nbsp;Personal Skills</h1>
+                </div>
                 <div class="skillbar" data-percent="87%">
                     <div class="skillbar-title  persSkillsTitle"><span>Leadership</span></div>
                     <div class="skillbar-bar  persSkillsBar"></div>
@@ -118,9 +120,15 @@
         </div>
     </div>
     <div id="bwSkillXP" class="bwDiv cvDiv">
-        <h1 class="insetText bw">Work Experience</h1>
+        <h1 class="insetText bw">Work & Internships</h1>
     </div>
     <div id="experience" class="cvDiv">
+        <div id="workDiv" class="workDiv">
+            <h1 id="workH1" class="workH1 insetText">Work experiences</h1>
+        </div>
+        <div id="intDiv" class="intDiv">
+            <h1 id="intH1" class="intH1 insetText"><br/><br/>Internship</h1>
+        </div>
         <div id="timeline">
             <div id="timelineWork" class="timelineLine">
                 <div id="bubble7" class="bubble">
@@ -150,7 +158,7 @@
             <div id="timelineSelected" style="display: none">
                 <h1 id="workName7" class="workName" style="display: none">Pizza Bonici</h1>
                 <h1 id="workName7" class="workName" style="display: none">TFC</h1>
-                <h1 id="workName6" class="workName" style="display: none">Gas Station "Relais des Cedres"</h1>
+                <h1 id="workName6" class="workName" style="display: none">Relais des Cedres</h1>
                 <h1 id="workName6" class="workName" style="display: none">TFC</h1>
                 <h1 id="workName5" class="workName" style="display: none">McDonald's</h1>
                 <h1 id="workName5" class="workName" style="display: none">TFC</h1>
@@ -191,17 +199,25 @@
                 </div>
                 <div id="studies">
                     <div id="arenesS">
-                        <h1 class="study">Lycée des Arènes</h1></div>
+                        <h1 class="study insetText">Lycée des Arènes</h1>
+                    </div>
+                    <div id="linkAM"></div>
                     <div id="mirailS">
-                        <h1 class="study">Université Toulouse II - Jean Jaurès</h1></div>
+                        <h1 class="study insetText">Université Toulouse II - Jean Jaurès</h1>
+                    </div>
+                    <div id="linkME"></div>
                     <div id="exiaS">
-                        <h1 class="study">Exia.CESi</h1></div>
+                        <h1 class="study insetText">Exia.CESi</h1></div>
                 </div>
                 <div id="studySelected">
-                    <div id="schoolName"></div>
+                    <div id="schoolInfo">
+                        <div id="schoolName"></div>
+                        <div id="schoolLink"></div>
+                        <div id="schoolDate"></div>
+                        <div id="schoolDesc"></div>
+                    </div>
+                    <hr width="1" size="200">
                     <div id="schoolLoc"></div>
-                    <div id="schoolDate"></div>
-                    <div id="schoolDesc"></div>
                 </div>
             </div>
         </div>
@@ -232,6 +248,12 @@
                     <li><i class="fa-li fa fa-skype fa-lg"></i><a href="skype:dylan.cattelan?userinfo"><h4>&nbsp;dylan.cattelan</h4></a></li>
                     <li><i class="fa-li fa fa-mobile fa-lg"></i><a href="callto:0681015114"><h4>&nbsp;06.81.01.51.14</h4></a></li>
                 </ul>
+                <br />
+                <br />
+                <br />
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-download fa-lg"></i><a href="/cv-theme/cv.pdf" download="Résumé Dylan Cattelan.pdf"><h4>&nbsp;Download résumé (.pdf)</h4></a></li>
+                </ul>
             </div>
             <hr width="1" size="500">
             <div id="contactZone">
@@ -240,13 +262,13 @@
                     <input type="mail" name="username" id="contactMail" required="required" placeholder="Mail" />
                     <input type="text" name="username" id="contactCompany" placeholder="Company" />
                     <textarea id="contactMessage" placeholder="Message" required="required"></textarea>
-                    <input type="submit" value="SEND" id="contactButton"/>
+                    <input type="submit" value="SEND" id="contactButton" />
                 </form>
             </div>
         </div>
     </div>
     <div id="footer" class="bwDiv cvDiv">
-        <h1 class="insetText end">This website has been fully made by <a href=''>Dylan Cattelan</a> - Version 0.5 - 2017</h1>
+        <h1 class="insetText end">This website has been fully made by <a href='https://www.linkedin.com/in/dylancattelan'>Dylan Cattelan</a> - Version 0.9b - 2017</h1>
     </div>
 </body>
 
