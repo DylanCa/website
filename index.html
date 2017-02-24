@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link href="cv-theme/css/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="cv-theme/css/style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Dylan Cattelan</title>
 </head>
@@ -19,7 +20,8 @@
 <div id="progressbar">
     <progress value="0"></progress>
 </div>
-<div id="enveloppe"></div>
+<!-- 
+<div id="enveloppe"></div> -->
 
 <body>
     <div id="sidebar">
@@ -33,7 +35,7 @@
             <div class="buttonText">Education</div>
         </button>
         <button id="buttonContact" class="buttons">
-            <div class="buttonText">Contact</div>
+            <div class="buttonText">Misc. & Contact</div>
         </button>
     </div>
     <div id="background">
@@ -120,7 +122,7 @@
     </div>
     <div id="experience" class="cvDiv">
         <div id="timeline">
-            <div id="timelineLine">
+            <div id="timelineWork" class="timelineLine">
                 <div id="bubble7" class="bubble">
                     <h1 class="bubbleh">2017</h1>
                 </div>
@@ -140,22 +142,27 @@
                     <h1 class="bubbleh">2012</h1>
                 </div>
             </div>
-            <div id="timelineSelected">
-                <div id="workName7" class="workName" style="display: none">TFC</div>
-                <div id="workName7" class="workName" style="display: none">Pizza</div>
-                <div id="workName6" class="workName" style="display: none">TFC</div>
-                <div id="workName6" class="workName" style="display: none">Gas Station "Relais des Cedres"</div>
-                <div id="workName5" class="workName" style="display: none">TFC</div>
-                <div id="workName5" class="workName" style="display: none">McDonald's</div>
-                <div id="workName4" class="workName" style="display: none">TFC</div>
-                <div id="workName4" class="workName" style="display: none">McDonald's</div>
-                <div id="workName4" class="workName" style="display: none">Chronodrive</div>
-                <div id="workName4" class="workName" style="display: none">Quick</div>
-                <div id="workName3" class="workName" style="display: none">TFC</div>
-                <div id="workName3" class="workName" style="display: none">Quick</div>
-                <div id="workName2" class="workName" style="display: none">TFC</div>
+            <div id="timelineInt" class="timelineLine">
+                <div id="bubbleCNRS" class="bubbleInt">
+                    <h1 class="bubbleh">CNRS</h1>
+                </div>
             </div>
-            <div id="workselected">
+            <div id="timelineSelected" style="display: none">
+                <h1 id="workName7" class="workName" style="display: none">Pizza Bonici</h1>
+                <h1 id="workName7" class="workName" style="display: none">TFC</h1>
+                <h1 id="workName6" class="workName" style="display: none">Gas Station "Relais des Cedres"</h1>
+                <h1 id="workName6" class="workName" style="display: none">TFC</h1>
+                <h1 id="workName5" class="workName" style="display: none">McDonald's</h1>
+                <h1 id="workName5" class="workName" style="display: none">TFC</h1>
+                <h1 id="workName4" class="workName" style="display: none">McDonald's</h1>
+                <h1 id="workName4" class="workName" style="display: none">Chronodrive</h1>
+                <h1 id="workName4" class="workName" style="display: none">Quick</h1>
+                <h1 id="workName4" class="workName" style="display: none">TFC</h1>
+                <h1 id="workName3" class="workName" style="display: none">Quick</h1>
+                <h1 id="workName3" class="workName" style="display: none">TFC</h1>
+                <h1 id="workName2" class="workName" style="display: none">TFC</h1>
+            </div>
+            <div id="workSelected" style="display: none">
             </div>
         </div>
     </div>
@@ -164,19 +171,82 @@
     </div>
     <div id="formation" class="cvDiv">
         <div class="slide_inside">
-            <p>Formation ff ff</p>
+            <div id="timeline">
+                <div id="timelineStudies" class="timelineLine">
+                    <div id="bubbleS7" class="bubbleS">
+                        <h1 class="bubbleh">2017</h1>
+                    </div>
+                    <div id="bubbleS6" class="bubbleS">
+                        <h1 class="bubbleh">2016</h1>
+                    </div>
+                    <div id="bubbleS5" class="bubbleS">
+                        <h1 class="bubbleh">2015</h1>
+                    </div>
+                    <div id="bubbleS4" class="bubbleS">
+                        <h1 class="bubbleh">2014</h1>
+                    </div>
+                    <div id="bubbleS3" class="bubbleS">
+                        <h1 class="bubbleh">2013</h1>
+                    </div>
+                </div>
+                <div id="studies">
+                    <div id="arenesS">
+                        <h1 class="study">Lycée des Arènes</h1></div>
+                    <div id="mirailS">
+                        <h1 class="study">Université Toulouse II - Jean Jaurès</h1></div>
+                    <div id="exiaS">
+                        <h1 class="study">Exia.CESi</h1></div>
+                </div>
+                <div id="studySelected">
+                    <div id="schoolName"></div>
+                    <div id="schoolLoc"></div>
+                    <div id="schoolDate"></div>
+                    <div id="schoolDesc"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="bwFormContact" class="bwDiv cvDiv">
-        <h1 class="insetText">Contact</h1>
+        <h1 class="insetText">Misc. & Contact</h1>
     </div>
     <div id="Contact" class="cvDiv">
         <div class="slide_inside">
-            <p>Contact cc cc</p>
+            <div id="misc">
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-user-o fa-lg"></i>
+                        <h4>&nbsp;Dylan Cattelan</h4></li>
+                    <li><i class="fa-li fa fa-birthday-cake fa-lg"></i>
+                        <h4>&nbsp;28/10/1994</h4></li>
+                    <li><i class="fa-li fa fa-map-marker fa-lg"></i><a href="https://www.google.com/maps?q=Pibrac"><h4>&nbsp;Pibrac</h4></a></li>
+                    <li><i class="fa-li fa fa-car fa-lg"></i>
+                        <h4>&nbsp;Driving License</h4></li>
+                </ul>
+                <br />
+                <br />
+                <br />
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-at fa-lg"></i><a href="mailto:dylan.cattelan@gmail.com"><h4>&nbsp;dylan.cattelan@gmail.com</h4></a></li>
+                    <li><i class="fa-li fa fa-linkedin fa-lg"></i><a href="https://www.linkedin.com/in/dylancattelan"><h4>&nbsp;Dylan Cattelan</h4></a></li>
+                    <li><i class="fa-li fa fa-github fa-lg"></i>
+                        <a href="https://github.com/DylanCa"><h4>&nbsp;DylanCa</h4></a></li>
+                    <li><i class="fa-li fa fa-skype fa-lg"></i><a href="skype:dylan.cattelan?userinfo"><h4>&nbsp;dylan.cattelan</h4></a></li>
+                    <li><i class="fa-li fa fa-mobile fa-lg"></i><a href="callto:0681015114"><h4>&nbsp;06.81.01.51.14</h4></a></li>
+                </ul>
+            </div>
+            <hr width="1" size="500">
+            <div id="contactZone">
+                <form action=" " method="post" autocomplete="on">
+                    <input type="text" name="username" id="contactName" required="required" placeholder="Name" />
+                    <input type="mail" name="username" id="contactMail" required="required" placeholder="Mail" />
+                    <input type="text" name="username" id="contactCompany" placeholder="Company" />
+                    <textarea id="contactMessage" placeholder="Message" required="required"></textarea>
+                    <input type="submit" value="SEND" id="contactButton"/>
+                </form>
+            </div>
         </div>
     </div>
     <div id="footer" class="bwDiv cvDiv">
-        <h1 class="insetText end">End</h1>
+        <h1 class="insetText end">This website has been fully made by <a href=''>Dylan Cattelan</a> - Version 0.5 - 2017</h1>
     </div>
 </body>
 

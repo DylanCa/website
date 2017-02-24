@@ -1,3 +1,4 @@
+@import url("font-awesome.min.css");
 html {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -179,7 +180,7 @@ body {
 }
 
 #skills {
-    background-color: white;
+    background-color: #ecf0f1;
     z-index: 10;
     text-align: center;
 }
@@ -203,17 +204,17 @@ body {
 }
 
 #experience {
-    background-image: url('../img/cover.jpg');
+    background-color: #ecf0f1;
     z-index: 9;
 }
 
 #formation {
-    background: white;
+    background: #ecf0f1;
     z-index: 8;
 }
 
 #Contact {
-    background-image: url('../img/cover.jpg');
+    background: #ecf0f1;
     z-index: 7;
 }
 
@@ -257,7 +258,7 @@ body {
 }
 
 .end {
-    font: bold 20px arial, sans-serif;
+    font: bold 15px arial, sans-serif;
 }
 
 .bwDiv {
@@ -341,27 +342,145 @@ body {
     background-color: black
 }
 
-#timelineLine {
+.timelineLine {
     height: 1200px;
     width: 10px;
     background-color: #ecf0f1;
     box-shadow: inset 0px 0px 2px 1px;
-    margin-left: 50px;
+    left: 50px;
     position: absolute;
 }
 
-.bubble {
+#timelineSelected {
+    padding: 10px;
+    top: 300px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 2px 1px;
+    margin-left: 120px;
+    position: relative;
+    float: left;
+    max-width: 325px;
+    max-height: 550px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#workSelected {
+    padding: 10px;
+    top: 300px;
+    border-radius: 5px;
+    max-width: 325px;
+    max-height: 550px;
+    background-color: #ecf0f1;
+    box-shadow: inset 0px 0px 2px 1px;
+    position: relative;
+    margin-left: 10px;
+    float: left;
+    text-align: center;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#timelineInt {
+    left: 850px;
+    padding-left: -30px;
+}
+
+#timelineStudies {
+    width: 110%;
+    height: 5px;
+    margin-left: -100px;
+    position: relative;
+}
+
+#studySelected {
+    padding: 25px;
+    position: absolute;
+    border: 1px hidden;
+    box-shadow: inset 0px 0px 5px 0px #656565;
+    border-radius: 5px;
+    height: 250px;
+    width: 850px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#schoolName {
+    position: relative;
+    margin-left: -15px;
+    margin-top: -15px;
+    height: 50px;
+    width: 440px;
+}
+
+#schoolDate {
+    position: relative;
+    margin-left: -15px;
+    margin-top: 5px;
+    height: 50px;
+    width: 440px;
+}
+
+#schoolDesc {
+    position: relative;
+    margin-left: -15px;
+    margin-top: 5px;
+    height: 165px;
+    width: 440px;
+}
+
+#schoolLoc {
+    float: right;
+    position: relative;
+    right: -15px;
+    top: -70px;
+    height: 280px;
+    width: 425px;
+}
+
+#arenesS,
+#mirailS,
+#exiaS {
+    position: relative;
+    border: 1px hidden;
+    box-shadow: inset 0px 0px 5px 0px #656565;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+}
+
+#arenesS {
+    width: 180px;
+    margin-left: -20px;
+    top: 10px;
+    padding-left: 20px;
+}
+
+#mirailS {
+    margin-left: 180px;
+    width: 370px;
+}
+
+#exiaS {
+    margin-left: 550px;
+    width: 370px;
+}
+
+.bubble,
+.bubbleInt,
+.bubbleS {
     width: 55px;
     height: 55px;
     background-color: #ecf0f1;
     box-shadow: inset 0px 0px 2px 1px;
     border-radius: 50%;
-    margin-left: -24px;
+    margin-left: -22px;
     position: absolute;
 }
 
 .bubbleh {
-    font: bold 22px arial, sans-serif;
+    font: bold 21px arial, sans-serif;
     color: transparent;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
     -webkit-background-clip: text;
@@ -370,52 +489,152 @@ body {
     text-align: center;
 }
 
+.bubbleInt {
+    width: 70px;
+    border-radius: 20%;
+    margin-left: -30px;
+    top: 500px;
+}
+
+.bubbleS {
+    margin-top: -20px;
+    width: 70px;
+    height: 50px;
+    border-radius: 20%;
+}
+
 #bubble7 {
-    top: 300px;
+    top: 250px;
 }
 
 #bubble6 {
-    top: 405px;
+    top: 355px;
 }
 
 #bubble5 {
-    top: 510px;
+    top: 460px;
 }
 
 #bubble4 {
-    top: 615px;
+    top: 565px;
 }
 
 #bubble3 {
-    top: 720px;
+    top: 670px;
 }
 
 #bubble2 {
-    top: 825px;
+    top: 775px;
 }
 
-#timelineSelected {
-    padding: 10px;
-    top: 300px;
-    width: 325px;
-    height: 550px;
-    background-color: #ecf0f1;
-    box-shadow: inset 0px 0px 2px 1px;
-    margin-left: 120px;
-    position: absolute;
-    float: right;
-    text-align: center;
+#bubbleS3 {
+    left: 100px;
 }
 
-#workselected {
-    padding: 10px;
-    top: 300px;
-    width: 325px;
-    height: 550px;
-    background-color: #ecf0f1;
-    box-shadow: inset 0px 0px 2px 1px;
-    margin-left: 475px;
-    position: absolute;
+#bubbleS4 {
+    left: 297.5px;
+}
+
+#bubbleS5 {
+    left: 495px;
+}
+
+#bubbleS6 {
+    left: 692.5px;
+}
+
+#bubbleS7 {
+    left: 890px;
+}
+
+#misc {
+    line-height: 100%;
+    float: left;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+hr {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#Contact li {
+    margin-top: -20px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+h4 {
+    font: bold 20px arial, sans-serif;
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#contactZone {
+    margin-top: 20px;
+    margin-right: 10px;
     float: right;
-    text-align: center;
+    height: 470px;
+    width: 510px;
+}
+
+#contactName,
+#contactMail,
+#contactCompany,
+#contactButton,
+#contactMessage {
+    width: 450px;
+    height: 35px;
+    padding-left: 45px;
+    background-size: 35px 35px;
+    background-position: 4px 0px;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+    border: none;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+}
+
+#contactName {
+    background-image: url('../img/name.svg');
+}
+
+#contactMail {
+    background-image: url('../img/email.svg');
+    width: 449.5px;
+}
+
+#contactCompany {
+    background-image: url('../img/corp.jpg');
+    background-position: 7px 2px;
+    background-size: 30px 30px;
+}
+
+#contactMessage {
+    background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+    height: 280px;
+    width: 449px;
+}
+
+#contactButton {
+    margin-top: 10px;
+    width: 500px;
+}
+
+input,
+textarea {
+    font: 21px arial, sans-serif;
 }

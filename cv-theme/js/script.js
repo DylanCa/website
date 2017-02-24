@@ -7,6 +7,7 @@ $(document).ready(function() {
     bubbleClick();
     hoverBar();
     workClick();
+    studyClick();
 
     $(window).scroll(function() {
         var s = $(window).scrollTop(),
@@ -76,11 +77,11 @@ function setHeight() {
 function moveZone() {
     $('#skills').css({ 'top': $(this).scrollTop() * 0.02 });
 
-    $('#experience').css({ 'top': $(this).scrollTop() * 0.02 - 50});
+    $('#experience').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
 
     $('#formation').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
 
-    $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 50});
+    $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
 }
 
 function setZone() {
@@ -144,60 +145,6 @@ function skillbar() {
     }
 }
 
-function bubbleClick() {
-
-
-
-    $('.bubble').click(function() {
-
-        $(".workName").hide();
-
-        if ($(this).css("marginLeft") == '-24px') {
-            $('.bubble').animate({
-                'marginLeft': '-24'
-            }, 100);
-            $(this).animate({
-                'marginLeft': '0'
-            }, 100);
-
-            switch ($(this).find("h1").html()) {
-
-                case '2017':
-                    $("div#workName7").show();
-                    $("#timelineSelected").show();
-                    break;
-                case '2016':
-                    $("div#workName6").show();
-                    $("#timelineSelected").show();
-                    break;
-                case '2015':
-                    $("div#workName5").show();
-                    $("#timelineSelected").show();
-                    break;
-                case '2014':
-                    $("div#workName4").show();
-                    $("#timelineSelected").show();
-                    break;
-                case '2013':
-                    $("div#workName3").show();
-                    $("#timelineSelected").show();
-                    break;
-                case '2012':
-                    $("div#workName2").show();
-                    $("#timelineSelected").show();
-                    break;
-                default:
-                    break;
-            }
-        } else if ($(this).css("marginLeft") == '0px') {
-            $('.bubble').animate({
-                'marginLeft': '-24'
-            }, 100);
-            $("#timelineSelected").hide();
-        }
-    });
-}
-
 function hoverBar() {
     $('.skillbar').hover(function() {
         switch ($(this).find("span").html()) {
@@ -250,28 +197,138 @@ function hoverBar() {
     }, function() { $("#skillHovered").html('<p>Hover a skill to see details.</p>'); });
 }
 
+function bubbleClick() {
+
+
+
+    $('.bubble, .bubbleInt').click(function() {
+
+        $(".workName").hide();
+        $('#workSelected').hide();
+
+        if ($(this).css("marginLeft") == '-22px' || $(this).css("marginLeft") == '-30px') {
+            $('.bubble').animate({
+                'marginLeft': '-22'
+            }, 100);
+            $('.bubbleInt').animate({
+                'marginLeft': '-30'
+            }, 100);
+
+            if ($(this).attr('class') == 'bubbleInt') {
+
+                $(this).animate({
+                    'marginLeft': '-60'
+                }, 100);
+            } else {
+                $(this).animate({
+                    'marginLeft': '0'
+                }, 100);
+            }
+
+            $("#timelineSelected").show();
+
+            switch ($(this).find("h1").html()) {
+
+                case '2017':
+                    $("h1#workName7").show();
+                    break;
+                case '2016':
+                    $("h1#workName6").show();
+                    break;
+                case '2015':
+                    $("h1#workName5").show();
+                    break;
+                case '2014':
+                    $("h1#workName4").show();
+                    break;
+                case '2013':
+                    $("h1#workName3").show();
+                    break;
+                case '2012':
+                    $("h1#workName2").show();
+                    break;
+                case 'CNRS':
+                    $("#timelineSelected").hide();
+                    $('#workSelected').show();
+                    $("#workSelected").load("/cv-theme/templates/timeline.html #cnrs ").html();
+                    $("#workSelected").css({
+                        'float': 'right',
+                        'left': '-150px'
+                    });
+                default:
+                    break;
+            }
+        } else if ($(this).css("marginLeft") == '0px' || $(this).css("marginLeft") == '-60px') {
+            $('.bubble').animate({
+                'marginLeft': '-22'
+            }, 100);
+
+            $('.bubbleInt').animate({
+                'marginLeft': '-30'
+            }, 100);
+
+            $("#timelineSelected").hide();
+        }
+    });
+}
+
 function workClick() {
     $('.workName').click(function() {
+        $("#workSelected").css({
+            'float': 'left',
+            'marginLeft': '10px',
+            'left': ''
+        });
+        $('#workSelected').empty();
+        $('#workSelected').show();
+
         switch ($(this).html()) {
             case "TFC":
-                $("#workselected").load("/cv-theme/templates/timeline.html #tfc ").html();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #tfc ").html();
                 break;
-            case "Pizza":
-                $("#workselected").load("/cv-theme/templates/timeline.html #pizza ").html();
+            case "Pizza Bonici":
+                $("#workSelected").load("/cv-theme/templates/timeline.html #pizza ").html();
                 break;
             case 'Gas Station "Relais des Cedres"':
-                $("#workselected").load("/cv-theme/templates/timeline.html #station ").html();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #station ").html();
                 break;
             case "McDonald's":
-                $("#workselected").load("/cv-theme/templates/timeline.html #mcdo ").html();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #mcdo ").html();
                 break;
             case "Quick":
-                $("#workselected").load("/cv-theme/templates/timeline.html #quick ").html();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #quick ").html();
                 break;
             case "Chronodrive":
-                $("#workselected").load("/cv-theme/templates/timeline.html #chrono ").html();
+                $("#workSelected").load("/cv-theme/templates/timeline.html #chrono ").html();
                 break;
 
+            default:
+                break;
+        }
+    });
+}
+
+function studyClick() {
+    $('.study').click(function() {
+        switch ($(this).html()) {
+            case "Exia.CESi":
+                $('#schoolName').load("/cv-theme/templates/timeline.html #exia .schoolName").html();
+                $('#schoolLoc').load("/cv-theme/templates/timeline.html #exia .schoolLoc").html();
+                $('#schoolDate').load("/cv-theme/templates/timeline.html #exia .schoolDate").html();
+                $('#schoolDesc').load("/cv-theme/templates/timeline.html #exia .schoolDesc").html();
+                break;
+                case "Lycée des Arènes":
+                $('#schoolName').load("/cv-theme/templates/timeline.html #arenes .schoolName").html();
+                $('#schoolLoc').load("/cv-theme/templates/timeline.html #arenes .schoolLoc").html();
+                $('#schoolDate').load("/cv-theme/templates/timeline.html #arenes .schoolDate").html();
+                $('#schoolDesc').load("/cv-theme/templates/timeline.html #arenes .schoolDesc").html();
+                break;
+                case "Université Toulouse II - Jean Jaurès":
+                $('#schoolName').load("/cv-theme/templates/timeline.html #mirail .schoolName").html();
+                $('#schoolLoc').load("/cv-theme/templates/timeline.html #mirail .schoolLoc").html();
+                $('#schoolDate').load("/cv-theme/templates/timeline.html #mirail .schoolDate").html();
+                $('#schoolDesc').load("/cv-theme/templates/timeline.html #mirail .schoolDesc").html();
+                break;
             default:
                 break;
         }
