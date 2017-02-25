@@ -170,27 +170,6 @@ function hoverBar() {
             case 'SQL':
                 $("#skillHovered").load("/cv-theme/templates/timeline.html #SQL").html();
                 break;
-            case 'Leadership':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #Leadership").html();
-                break;
-            case 'Interpersonal Skills':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #IS").html();
-                break;
-            case 'Initiative':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #Initiative").html();
-                break;
-            case 'Optimism':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #Optimism").html();
-                break;
-            case 'Adaptability':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #Adaptability").html();
-                break;
-            case 'Critical Thinking':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #CT").html();
-                break;
-            case 'Reliability':
-                $("#skillHovered").load("/cv-theme/templates/timeline.html #Reliability").html();
-                break;
             default:
                 $("#skillHovered").html('<p>Hover a skill to see details.</p>');
                 break;

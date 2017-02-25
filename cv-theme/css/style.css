@@ -8,6 +8,8 @@ html {
 
 header {
     position: relative;
+    padding: 0;
+    margin: 0 auto;
     z-index: 1000;
     display: block;
     position: fixed;
@@ -16,8 +18,7 @@ header {
     background-color: #ecf0f1;
     background-position: center;
     -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease;
-}
+    transition: all 0.6s ease;}
 
 header.sticky {
     height: 100px;
@@ -25,11 +26,11 @@ header.sticky {
 }
 
 #pic {
-    position: relative;
+    position: fixed;
     border: 5px solid white;
     border-width: 5px;
     margin-top: 90px;
-    margin-left: 45%;
+    margin-left: 42%;
     border-radius: 50%;
     height: 160px;
     width: auto;
@@ -85,8 +86,8 @@ progress.sticky {
 
 #enveloppe {
     background: #ecf0f1;
-    -webkit-transition: all 3s ease;
-    transition: all 3s ease;
+    -webkit-transition: all 1.5s ease;
+    transition: all 1.5s ease;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -94,7 +95,8 @@ progress.sticky {
 }
 
 #enveloppe.sticky {
-    margin-top: 5000px;
+    background: transparent;
+    pointer-events: none;
 }
 
 body {
@@ -109,7 +111,7 @@ body {
 
 #sidebar {
     position: fixed;
-    z-index: 900;
+    z-index: 1000;
     right: 0;
     top: 350px;
     border-radius: 7px 0px 0px 7px;
@@ -135,7 +137,6 @@ body {
 
 .bgimg {
     position: fixed;
-    background-repeat: no-repeat;
     background-position: center bottom;
     width: 100%;
     height: 100%;
@@ -257,7 +258,7 @@ body {
     display: block;
     margin-bottom: 15px;
     width: 300px;
-    background: #eee;
+    background: #DDD;
     height: 20px;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -275,7 +276,7 @@ body {
     font-weight: bold;
     font-size: 16px;
     color: #fff;
-    background: #B7B7B7;
+    background: #898989;
     -webkit-border-top-left-radius: 3px;
     -webkit-border-bottom-left-radius: 4px;
     -moz-border-radius-topleft: 3px;
@@ -317,7 +318,7 @@ body {
 }
 
 .persSkillsBar {
-    background: #B7B7B7;
+    background: #E99E2F;
 }
 
 .persSkillsBar:hover {
