@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <link rel="stylesheet" href="cv-theme/css/style.css" type="text/css">
+    <link rel="stylesheet" href="cv-theme/css/font-awesome.min.css" type="text/css">
+    <link rel="icon" type="image/png" href="/cv-theme/img/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Dylan Cattelan</title>
 </head>
@@ -20,7 +25,10 @@
 <div id="progressbar">
     <progress value="0"></progress>
 </div>
-<div id="enveloppe"></div>
+<div id="enveloppe">
+    <h1 id="envH1" class="insetText">For a better experience<br /> please visit this website using your computer.</h1>
+    <h2 id="envH2" class="insetText">( Responsive website under construction )</h2>
+</div>
 
 <body>
     <div id="sidebar">
@@ -256,12 +264,15 @@
             </div>
             <hr width="1" size="500">
             <div id="contactZone">
-                <form action=" " method="post" autocomplete="on">
-                    <input type="text" name="username" id="contactName" required="required" placeholder="Name" />
-                    <input type="mail" name="username" id="contactMail" required="required" placeholder="Mail" />
-                    <input type="text" name="username" id="contactCompany" placeholder="Company" />
-                    <textarea id="contactMessage" placeholder="Message" required="required"></textarea>
-                    <input type="submit" value="SEND" id="contactButton" />
+                <form action="" method="post" autocomplete="on">
+                    <input type="hidden" name="action" value="submit">
+                    <input type="text" name="contactName" id="contactName" required="required" placeholder="Name" />
+                    <input type="email" name="contactMail" id="contactMail" required="required" placeholder="Mail" />
+                    <input type="text" name="contactCompany" id="contactCompany" placeholder="Company" />
+                    <textarea placeholder="Message" name="contactMessage" id="contactMessage" required="required"></textarea>
+                    <input type="submit" value="SEND MESSAGE" id="contactButton" />
+                    <input type="checkbox" id="sendto" name="sendto" value="Bike">
+                    <h4 id="sendH4" class="insetText">Send a copy to yourself</h4>
                 </form>
             </div>
         </div>
