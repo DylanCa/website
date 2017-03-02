@@ -30,8 +30,6 @@ $(document).ready(function() {
             $('progress').addClass("sticky");
             $('#enveloppe').addClass("sticky");
 
-        } else {
-            $('button').css({ 'background-color': '#ecf0f1' });
         }
     });
 });
@@ -73,22 +71,22 @@ function setZone() {
 
     $('#buttonSkills').click(function() {
         $("html, body").animate({
-            scrollTop: "0px"
+            scrollTop: $('#bwHeadSkills').offset().top - $('#cvName').height() * 1.1
         }, 400)
     });
     $('#buttonExperience').click(function() {
         $("html, body").animate({
-            scrollTop: "1000px"
+            scrollTop: $('#bwSkillXP').offset().top - $('#cvName').height() * 1.1
         }, 400)
     });
     $('#buttonFormation').click(function() {
         $("html, body").animate({
-            scrollTop: "2140px"
+            scrollTop: $('#bwXPForm').offset().top - $('#cvName').height() * 1.1
         }, 400)
     });
     $('#buttonContact').click(function() {
         $("html, body").animate({
-            scrollTop: "3280px"
+            scrollTop: $('#bwFormContact').offset().top - $('#cvName').height() * 1.1
         }, 400)
     });
 
@@ -108,6 +106,7 @@ function setZone() {
         }
     });
 }
+
 
 function skillbar() {
     jQuery('.skillbar').each(function() {
