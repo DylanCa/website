@@ -7,14 +7,14 @@ $(document).ready(function() {
     hoverBar();
     divClick();
 
-    movingParts(); // Effet de "déplacement" des différentes zones ( à optimiser avant de remettre)
+    // movingParts(); // Effet de "déplacement" des différentes zones ( à optimiser avant de remettre)
 
     $(window).scroll(function() {
         var s = $(window).scrollTop(),
             c = $(window).height();
         position = (s / (d - c));
 
-        movingParts();
+        // movingParts();
         skillbar();
 
 
@@ -35,29 +35,31 @@ $(document).ready(function() {
 });
 
 
+
 function setHeight() {
 
-    if ($('#bwSkillXP').offset().top - $(this).scrollTop() < $(window).height() + 500 && $(this).scrollTop() > 0) {
+    if ($('#bwSkillXP').offset().top - $(this).scrollTop() < $(window).height() * 1.3 && $(this).scrollTop() > 0) {
         $('#skills').css({ 'height': $('#bwSkillXP').offset().top - $(this).scrollTop() });
         $('button').css({ 'background-color': '#ecf0f1' });
         $('#buttonSkills').css({ 'background-color': '#DDE0E2' });
 
-        if ($('#bwXPForm').offset().top - $(this).scrollTop() < $(window).height() + 500) {
+        if ($('#bwXPForm').offset().top - $(this).scrollTop() < $(window).height() * 1.3) {
             $('#experience').css({ 'height': $('#bwXPForm').offset().top - $(this).scrollTop() });
             $('button').css({ 'background-color': '#ecf0f1' });
             $('#buttonExperience').css({ 'background-color': '#DDE0E2' });
 
-            if ($('#bwFormContact').offset().top - $(this).scrollTop() < $(window).height() + 500) {
+            if ($('#bwFormContact').offset().top - $(this).scrollTop() < $(window).height() * 1.3) {
                 $('#formation').css({ 'height': $('#bwFormContact').offset().top - $(this).scrollTop() });
 
                 $('#Contact').css({ 'height': $('#footer').offset().top - $(this).scrollTop() });
+
 
                 $('button').css({ 'background-color': '#ecf0f1' });
                 $('#buttonFormation').css({ 'background-color': '#DDE0E2' });
 
 
 
-                if ($('#bwFormContact').offset().top - $(this).scrollTop() < 500) {
+                if ($('#bwFormContact').offset().top - $(this).scrollTop() < $(window).height() * 0.6) {
                     $('button').css({ 'background-color': '#ecf0f1' });
                     $('#buttonContact').css({ 'background-color': '#DDE0E2' });
 
@@ -171,31 +173,55 @@ function divClick() {
         switch ($(this).find("h1").html()) {
 
             case '2017':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName7").show();
                 break;
             case '2016':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName6").show();
                 break;
             case '2015':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName5").show();
                 break;
             case '2014':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName4").show();
                 break;
             case '2013':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName3").show();
                 break;
             case '2012':
+                $('#workDiv').hide();
+                $('#intDiv').show();
+
                 $("h1#workName2").show();
                 break;
             case 'CNRS':
+                $('#workDiv').show();
+                $('#intDiv').hide();
+
                 $("#timelineSelected").hide();
-                $('#workSelected').show();
-                $("#workSelected").load("/cv-theme/templates/timeline.html #cnrs ").html();
                 $("#workSelected").css({
                     'float': 'right',
-                    'left': '-100px'
+                    'left': '-5.04vw'
                 });
+
+                $("#workSelected").load("/cv-theme/templates/timeline.html #cnrs ").html();
+                $('#workSelected').show();
+
+
             default:
                 break;
         }
@@ -205,7 +231,7 @@ function divClick() {
     $('.workName').click(function() {
         $("#workSelected").css({
             'float': 'left',
-            'marginLeft': '10px',
+            'marginLeft': '0.52vw',
             'left': ''
         });
         $('#workSelected').empty();
@@ -217,7 +243,7 @@ function divClick() {
         });
 
         $(this).css({
-            'color': '#E7A036',
+            'color': '#383838',
             'box-shadow': 'inset 1px 1px 1px 1px #878787'
         });
 
@@ -248,7 +274,7 @@ function divClick() {
 
     $('.study').click(function() {
         $('.study').css('color', '');
-        $(this).css('color', '#155A15');
+        $(this).css('color', '#383838');
         switch ($(this).html()) {
             case "Exia.CESi":
                 $('#schoolName').load("/cv-theme/templates/timeline.html #exia .schoolName").html();
@@ -287,4 +313,5 @@ function movingParts() {
     $('#experience').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
     $('#formation').css({ 'top': $(this).scrollTop() * 0.02 - 50 });
     $('#Contact').css({ 'top': $(this).scrollTop() * 0.02 - 80 });
+
 }
