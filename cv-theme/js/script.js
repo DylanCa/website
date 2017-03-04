@@ -93,16 +93,19 @@ function setZone() {
     });
 
     $('#pic').click(function() {
-        if ($(window).scrollTop() == 0) {
-            $("html, body").animate({
-                scrollTop: "5px"
-            })
+        if ($('header').hasClass('sticky')) {
 
-        } else {
             $('header').removeClass("sticky");
             $('#pic').removeClass("sticky");
             $('progress').removeClass("sticky");
             $('#enveloppe').removeClass("sticky");
+
+        } else {
+
+            $('header').addClass("sticky");
+            $('#pic').addClass("sticky");
+            $('progress').addClass("sticky");
+            $('#enveloppe').addClass("sticky");
 
 
         }
@@ -111,11 +114,13 @@ function setZone() {
 
 
 function skillbar() {
+
     jQuery('.skillbar').each(function() {
         jQuery(this).find('.skillbar-bar').animate({
             width: jQuery(this).attr('data-percent')
         }, 500);
     });
+    skillbar = function() {};
 }
 
 function hoverBar() {
@@ -143,10 +148,11 @@ function hoverBar() {
                 $("#skillHovered").load("/cv-theme/templates/timeline.html #SQL").html();
                 break;
             default:
-                $("#skillHovered").html('<p>Hover a skill to see details.</p>');
                 break;
         }
-    }, function() { $("#skillHovered").html('<p>Hover a skill to see details.</p>'); });
+    }, function() {
+        $("#skillHovered").html('<h1 id="hoverH1">Hover a skill to see details.</h1>');
+    });
 }
 
 function bubbleClick() {}
@@ -290,7 +296,7 @@ function divClick() {
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #arenes .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #arenes .schoolDesc").html();
                 break;
-            case "Université Toulouse II - Jean Jaurès":
+            case "University Toulouse II - Jean Jaurès":
                 $('#schoolName').load("/cv-theme/templates/timeline.html #mirail .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #mirail .schoolLoc").html();
                 $('#schoolLink').load("/cv-theme/templates/timeline.html #mirail .schoolLink").html();

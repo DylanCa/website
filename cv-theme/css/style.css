@@ -227,6 +227,11 @@ body {
     height: 10vw;
 }
 
+#hoverH1{
+    font: 1.5vw Georgia;
+    color: #878787;
+}
+
 .skillH1 {
     font: 1.3vw arial;
 }
@@ -258,7 +263,8 @@ body {
     height: 5.2vw;
     background-position: 6.7vw 0.78vw;
     -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+        transform: rotate(-20deg);
 }
 
 #persoDiv {
@@ -270,12 +276,14 @@ body {
     height: 5.21vw;
     background-position: 10.42vw 0.78vw;
     -webkit-transform: rotate(-200deg);
-    transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+        transform: rotate(-200deg);
 }
 
 #persoH1 {
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
 }
 
 #experience {
