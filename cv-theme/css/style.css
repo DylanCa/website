@@ -149,12 +149,12 @@ progress.sticky {
 }
 
 body {
-    background: -webkit-radial-gradient(bottom ellipse, #F7FA9D -50%, #2B3045);
-    background: radial-gradient(ellipse at bottom, #F7FA9D -50%, #2B3045);
+    background: -webkit-radial-gradient(bottom ellipse, #848484 50%, #3D3D3D);
+    background: radial-gradient(ellipse at bottom, #848484 50%, #3D3D3D);
     background-size: 100% 110%;
-    width: 100%;
-    margin: 0 auto;
+    height: 370.33vh;
     position: relative;
+    margin: 0 auto;
 }
 
 #sidebar {
