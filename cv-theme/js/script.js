@@ -282,21 +282,21 @@ function divClick() {
         $('.study').css('color', '');
         $(this).css('color', '#383838');
         switch ($(this).html()) {
-            case "Exia.CESi":
+            case $('#exiaS').find('h1').html():
                 $('#schoolName').load("/cv-theme/templates/timeline.html #exia .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #exia .schoolLoc").html();
                 $('#schoolLink').load("/cv-theme/templates/timeline.html #exia .schoolLink").html();
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #exia .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #exia .schoolDesc").html();
                 break;
-            case "Lycée des Arènes":
+            case $('#arenesS').find('h1').html():
                 $('#schoolName').load("/cv-theme/templates/timeline.html #arenes .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #arenes .schoolLoc").html();
                 $('#schoolLink').load("/cv-theme/templates/timeline.html #arenes .schoolLink").html();
                 $('#schoolDate').load("/cv-theme/templates/timeline.html #arenes .schoolDate").html();
                 $('#schoolDesc').load("/cv-theme/templates/timeline.html #arenes .schoolDesc").html();
                 break;
-            case "University Toulouse II - Jean Jaurès":
+            case $('#mirailS').find('h1').html():
                 $('#schoolName').load("/cv-theme/templates/timeline.html #mirail .schoolName").html();
                 $('#schoolLoc').load("/cv-theme/templates/timeline.html #mirail .schoolLoc").html();
                 $('#schoolLink').load("/cv-theme/templates/timeline.html #mirail .schoolLink").html();
